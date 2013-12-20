@@ -85,10 +85,10 @@ class Game():
             #Получаем размеры экрана
             scr_width=pygame.display.Info().current_w
             scr_height=pygame.display.Info().current_h
-            
-#Добавить потом позиционирование окна по центру экрана
-#
-####################        
+
+            #Позиционирование окна по центру экрана
+            os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (scr_width//2-self.size[0]//2,scr_height//2-self.size[1]//2)
+
             self.screen=pygame.display.set_mode(self.size)
             pygame.display.set_caption(GAME_CAPTION)
             self.screen=pygame.display.get_surface() #Получаем объект-экран
@@ -138,11 +138,11 @@ class Game():
         self.balloons_img=[]
         try:
             self.background=self.load_img("fon1.jpg")[0]
-            self.balloons.append(self.load_img("balloon1.png"))
-            self.balloons.append(self.load_img("balloon2.png"))
-            self.balloons.append(self.load_img("balloon3.png"))
-            self.balloons.append(self.load_img("balloon4.png"))
-            self.balloons.append(self.load_img("balloon5.png"))
+            self.balloons_img.append(self.load_img("balloon1.png"))
+            self.balloons_img.append(self.load_img("balloon2.png"))
+            self.balloons_img.append(self.load_img("balloon3.png"))
+            self.balloons_img.append(self.load_img("balloon4.png"))
+            self.balloons_img.append(self.load_img("balloon5.png"))
             self.cursor=self.load_img("cursor.png")
             self.paper=self.load_img("paper1.png")[0]
             self.paper.set_colorkey((0,0,0))

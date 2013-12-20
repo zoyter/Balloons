@@ -15,6 +15,7 @@ try:
     import sys
     import os
     import pygame
+    import random
     from pygame.locals import *
 except ImportError, err:
     print ERROR_LOADING_MODULES+" %s" % (err)
@@ -91,23 +92,23 @@ class Game():
 
             self.screen=pygame.display.set_mode(self.size)
             pygame.display.set_caption(GAME_CAPTION)
-            self.screen=pygame.display.get_surface() #Получаем объект-экран
+            #Получаем объект-экран
+            self.screen=pygame.display.get_surface() 
             self.load_data()
 
 
-##    #Создаем список с информацией о шариках
-##    #координаты, картинка, скорость.
-##       
-##    #координаты, картинка, скорость.
-##    #img,x,y,speed
-##    balloons=[]
-##    for i in range(count):
-##        balloons.append([random.randint(1,6),
-##                        random.randrange(size[0]-images['balloon1'].get_width()-30),
-##                        random.randrange(size[1]),
-##                        random.randint(speed//1.5,speed)]
-##                        )
-##        
+        #Создаем список с информацией о шариках
+        #координаты, картинка, скорость.           
+        #координаты, картинка, скорость.
+        #img,x,y,speed
+        self.balloons=[]
+        for i in range(self.count):
+            self.balloons.append([random.randint(1,6),
+                            random.randrange(self.size[0]-self.balloons_img[0][0].get_width()-30),
+                            random.randrange(self.size[1]),
+                            random.randint(self.speed//1.5,self.speed)]
+                            )
+            
 
 
         self.main_loop()
@@ -181,13 +182,13 @@ class Game():
 
     def draw_npc(self):
         ''' Метод draw_npc обрабатывает события		для игровых объектов и выполняет их отрисовку на		холсте '''
-        pass
+        self.screen.blit(self.balloons_img[0][0],[100,100])
     
     def draw_player(self):
         '''
         Метод draw_player обрабатывает события для игрока и выполняет его отрисовку на холсте
         '''		
-        pass
+        self.screen.blit(self.cursor[0],[200,100])
 
 
     def draw_scene(self):
@@ -231,15 +232,10 @@ class Game():
             pygame.display.flip()
         #Выход из программы
         pygame.quit()
-		
-		
-		
-		
-
+		    
 def main():
     #True - включить полноэкранный режим
     #False - выключить полноэкранный режим
     BallonsGame = Game(False)	
-	
 	
 main()

@@ -11,6 +11,7 @@
 #Russian
 ERROR_LOADING_MODULES="Не могу загрузить модуль"
 ERROR_LOADING_IMAGE="Не могу загрузить изображение"
+ERROR_LOADING_SOUND="Не могу загрузить звуковой файл"
 CREATE_GAME_CLASS="Создаем класс игры"
 FULLSCREEN_ENABLE="Полноэкранный режим"
 FULLSCREEN_DISABLE="Не полный экран"

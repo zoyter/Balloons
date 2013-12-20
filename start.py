@@ -1,10 +1,10 @@
 #!/usr/bin/python
 #-*-coding:utf-8-*-
-'''
+"""
 Компьютерная игра "Balloons".
 Игорку необходимо проколоть как можно больше шариков за отведенное время.
 После удачного прокалывания шарика начисляются баллы, после того как шарик улетел у игрока отнимается попытка.
-'''
+"""
 # (c) Oleg Lyash
 #
 VERSION = "0.5"
@@ -21,8 +21,11 @@ except ImportError, err:
     sys.exit(2)
 
 def load_png(name):
-        ''' Загружает изображение
-        возвращает объект-изображение '''
+        '''
+        Функция load_png загружает изображение
+        Принимает name - имя файла
+        Возвращает объект-изображение
+        '''
         fullname = os.path.join('data', name)
         try:
             image = pygame.image.load(fullname)
@@ -49,10 +52,13 @@ def load_png(name):
 ##        self.hit = 0    
         
 class Game():
-    ''' Базовый класс игры
+    ''' 
+    Класс Game формирует игру
+    Метод _init_ принимает на вход логическую переменную, которая задает режим отображения (полноэкранный или оконный)
     '''
     def __init__(self,Fullscreen):
-        '''Инициализация игры
+        '''
+        Инициализация игры
         '''
         print(CREATE_GAME_CLASS)
         self.path="data"
@@ -73,19 +79,27 @@ class Game():
             self.main_loop()
 
     def load_data(self):
-        '''Загрузка данных
+        '''
+        Загрузка данных
         '''
         self.background=pygame.image.load(self.path+"/img/fon1.jpg").convert()
 
     def draw_npc(self):
+		'''
+		Метод draw_npc обрабатывает события для игровых объектов и выполняет их отрисовку на холсте
+		'''
         pass
 
     def draw_player(self):
+		'''
+		Метод draw_player обрабатывает события для игрока и выполняет его отрисовку на холсте
+		'''		
         pass
 
 
     def draw_scene(self):
-        '''Отрисовка сцены
+        '''
+        Отрисовка сцены
         '''
         self.screen.blit(self.background,[0,0])
         self.draw_npc()
@@ -127,7 +141,8 @@ class Game():
 		
 
 def main():
-    #True - enable Fullscreen
+    #True - включить полноэкранный режим
+    #False - выключить полноэкранный режим
     BallonsGame = Game(False)	
 	
 	

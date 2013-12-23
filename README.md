@@ -1,7 +1,8 @@
-Just game with balloons
-Просто игра с шариками
+Just game with balloons<BR>
+Просто игра с шариками<BR>
 
 
-Links:
-http://www.pygame.org/news.html
-http://nullege.com/codes/search?cq=pygame.display.Info
+Links:<BR>
+http://www.pygame.org/news.html<BR>
+http://nullege.com/codes/search?cq=pygame.display.Info<BR>
+http://programarcadegames.com/<BR>

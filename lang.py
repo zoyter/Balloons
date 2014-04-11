@@ -3,11 +3,9 @@
 Файл с переводом
 '''
 #
-
 #from locale import getdefaultlocale
 #LANGUAGE = getdefaultlocale()[0]
 #print LANGUAGE
-
 #Russian
 ERROR_LOADING_MODULES="Не могу загрузить модуль"
 ERROR_LOADING_IMAGE="Не могу загрузить изображение"

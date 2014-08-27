@@ -7,3 +7,5 @@
 <LI>http://programarcadegames.com/</LI>
 <LI>http://inventwithpython.com/</LI>
 </UL>
+<BR>
+Лицензия - <A href="http://www.gnu.org/licenses/gpl.html">GNU GPL3</A>

@@ -36,8 +36,8 @@ try:
     import pygame
     import random
     from pygame.locals import *
-except ImportError, err:
-    print ERROR_LOADING_MODULES+" %s" % (err)
+except ImportError(err):
+    print (ERROR_LOADING_MODULES+" %s" % (err))
     sys.exit(2)
 
 
@@ -53,9 +53,9 @@ def load_img(name):
             image = image.convert()
         else:
             image = image.convert_alpha()
-    except pygame.error, message:
-        print ERROR_LOADING_IMAGE, name
-        raise SystemExit, message
+    except pygame.error:
+        print (ERROR_LOADING_IMAGE, name)
+        raise SystemExit(message)
     return image, image.get_rect()
 
 class Balloon(pygame.sprite.Sprite):
@@ -175,9 +175,9 @@ class Game():
                     image = image.convert()
                 else:
                     image = image.convert_alpha()
-            except pygame.error, message:
-                print ERROR_LOADING_IMAGE, fullname
-                raise SystemExit, message
+            except pygame.error(message):
+                print (ERROR_LOADING_IMAGE, fullname)
+                raise SystemExit(message)
             return image, image.get_rect()
 
 
@@ -196,10 +196,10 @@ class Game():
             self.cursor=self.load_img("cursor.png")
             self.paper=self.load_img("paper1.png")[0]
             self.paper.set_colorkey((0,0,0))
-        except pygame.error, message:
-            print ERROR_LOADING_IMAGE, fullname
+        except pygame.error(message):
+            print (ERROR_LOADING_IMAGE, fullname)
             self.done=True
-            raise SystemExit, message
+            raise SystemExit(message)
 
 
 
@@ -211,10 +211,10 @@ class Game():
             pygame.mixer.music.load(self.path+'/snd/2Inventions_-_Johaness_Gilther_-_Subcarpathia__Original_Mix_.mp3')
             # Начинаем проигрывать музыку,
             pygame.mixer.music.play()
-        except pygame.error, message:
-            print ERROR_LOADING_SOUND, fullname
+        except pygame.error(message):
+            print (ERROR_LOADING_SOUND, fullname)
             self.done=True
-            raise SystemExit, message
+            raise SystemExit(message)
 
         #Загружаем взрыв
         print("Звуки взрывов откуда-то из интернета")
@@ -224,10 +224,10 @@ class Game():
             self.soundBoom2=pygame.mixer.Sound(self.path+'/snd/gun2.wav')
             self.soundBoom2.set_volume(0.3)
             self.soundLevel=pygame.mixer.Sound(self.path+'/snd/iron2.wav')
-        except pygame.error, message:
-            print ERROR_LOADING_SOUND, fullname
+        except pygame.error( message):
+            print (ERROR_LOADING_SOUND, fullname)
             self.done=True
-            raise SystemExit, message
+            raise SystemExit( message)
 
     def draw_npc(self):
         ''' Метод draw_npc обрабатывает события     для игровых объектов и выполняет их отрисовку на        холсте '''

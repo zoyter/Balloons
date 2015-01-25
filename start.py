@@ -47,6 +47,7 @@ def load_img(name):
     Принимает name - имя файла
     Возвращает объект-изображение
     '''
+    print('Пытаюсь загрузить "'+name+'"')
     try:
         image = pygame.image.load(name)
         if image.get_alpha is None:
@@ -235,7 +236,7 @@ class Game():
             i[2]-=i[3]
             if i[2]<0:
                 i[2]=self.size[1]
-            self.screen.blit(self.balloons_img[i[0]][0],[i[1],i[2]])
+            #self.screen.blit(self.balloons_img[i[0]][0],[i[1],i[2]])
 
     def draw_player(self):
         '''
